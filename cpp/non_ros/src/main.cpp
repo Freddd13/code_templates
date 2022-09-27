@@ -6,8 +6,6 @@
  * @yzdyzd13@gmail.com
  */
 
-// #include <ros/package.h>
-
 #include "kumo_algorithms.h"
 #include "params.hpp"
 
