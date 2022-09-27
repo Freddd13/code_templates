@@ -12,12 +12,19 @@ pkg_check_modules(glog REQUIRED libglog)
 find_package (Glog REQUIRED)
 include_directories(${GLOG_INCLUDE_DIRS})
 
+find_package (GFlags REQUIRED)
+include_directories(${GFLAGS_INCLUDE_DIRS})
+
 include_directories(${PCL_INCLUDE_DIRS})
 link_directories(${PCL_LIBRARY_DIRS})
 add_definitions(${PCL_DEFINITIONS})
 
-add_executable (main main.cpp)
-target_link_libraries (main Eigen3::Eigen ${GLOG_LIBRARIES} ${GFLAGS_LIBRARIES})
+
+
+add_executable (avg avg.cpp)
+target_link_libraries (avg Eigen3::Eigen ${GLOG_LIBRARIES} ${GFLAGS_LIBRARIES})
+# add_executable (main main.cpp)
+# target_link_libraries (main Eigen3::Eigen ${GLOG_LIBRARIES} ${GFLAGS_LIBRARIES})
 # target_link_libraries (main Eigen3::Eigen ${PCL_LIBRARIES} )
 
 # install glog:
